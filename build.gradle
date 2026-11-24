@@ -1,0 +1,12 @@
+plugins {id 'groovy' }
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation 'com.lesfurets:jenkins-pipeline-unit:1.31'
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+sourceSets {test { groovy { srcDirs = ['tests'] } } }
+test { useJUnitPlatform() }
